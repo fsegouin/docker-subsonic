@@ -10,6 +10,12 @@ sudo docker run --name subsonic_data
          subsonic_image:5.2 /bin/true 
 ```
 
+
+- In this example, the actual music files are managed in the **/data/music**.
+
+
+- Data container manages **only the subsonic configuration information.** 
+
 After crerateing this run subsonic_app:
 
 ```
@@ -19,9 +25,12 @@ sudo docker run -d -t -i --p 8100:4040 \
    subsonic_image:5.2
 ```
 
-# Port
-4040
 
-# Data
-/var/music
-/var/subsonic
+- In this example, we specify port 4040 to 8100.
+
+# Port (default)
+- 4040
+
+# Data (default)
+- /var/music
+- /var/subsonic
