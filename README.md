@@ -6,7 +6,7 @@ Dockerfile for subsonic (with flac & lame transcoders)
 Clone this repo and build the new image:
 
 ```
-sudo build -t you/subsonic .
+sudo docker build -t you/subsonic .
 ```
 
 Create the data container with:
