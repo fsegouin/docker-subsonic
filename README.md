@@ -1,13 +1,21 @@
 # docker-subsonic
-Dockerfile for subsonic
+Dockerfile for subsonic (with flac & lame transcoders)
 
 # Usage
+
+Clone this repo and build the new image:
+
+```
+sudo build -t you/subsonic .
+```
+
 Create the data container with:
 
 ```
 sudo docker run --name subsonic_data \
 	-v /data/music:/var/music \
-	emauve/subsonic:5.2 /bin/true
+	-v /data/subsonic-config:/var/subsonic \
+	you/subsonic:latest /bin/true
 ```
 
 
@@ -16,14 +24,14 @@ sudo docker run --name subsonic_data \
 
 - Data container manages **only the subsonic configuration information.** 
 
-After crerateing this run subsonic_app:
+After creating this, run subsonic_app:
 
 ```
 sudo docker run -d -t -i \
 	--publish 8100:4040 \
 	--name="subsonic_app" \
 	--volumes-from subsonic_data \
-	emauve/subsonic:5.2
+	emauve/subsonic:latest
 ```
 
 
