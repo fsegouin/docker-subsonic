@@ -31,7 +31,7 @@ sudo docker run -d -t -i \
 	--publish 8100:4040 \
 	--name="subsonic_app" \
 	--volumes-from subsonic_data \
-	emauve/subsonic:latest
+	you/subsonic:latest
 ```
 
 
